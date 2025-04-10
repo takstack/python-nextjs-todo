@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useGlobalContext } from '../hooks/useGlobalContext';
 import SyncLoader from 'react-spinners/SyncLoader';
 import { account } from '../lib/appwrite';
@@ -14,6 +14,7 @@ const Page = () => {
     const [todos, setTodos] = useState([]);
     const [error, setError] = useState(null);
     const [todoLoading, setTodoLoading] = useState(true);
+    const fetchedRef = useRef(false);
 
     const handleLogout = async () => {
         await account.deleteSession('current');
@@ -63,7 +64,10 @@ const Page = () => {
     }
 
     const fetchTodos = async (user_id) => {
+        if (fetchedRef.current) return;
+
         try {
+            fetchedRef.current = true;
             const res = await fetch(`http://localhost:8000/todos?user_id=${user_id}`)
             const data = await res.json()
 

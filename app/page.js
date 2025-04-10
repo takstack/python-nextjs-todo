@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import AddForm from "./components/AddForm";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useGlobalContext } from "./hooks/useGlobalContext";
 import SyncLoader from "react-spinners/SyncLoader";
 import { account } from "./lib/appwrite";
@@ -13,6 +13,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const router = useRouter();
+  const fetchedRef = useRef(false);
 
   const handleLogout = async () => {
     console.log(({ user }))
@@ -28,15 +29,18 @@ export default function Home() {
   }
 
   const fetchAllPublicTodos = async () => {
+    if (fetchedRef.current) return;
+
     try {
+      fetchedRef.current = true;
       const res = await fetch('http://localhost:8000/all_todos')
       const data = await res.json()
       console.log({ data })
       setTodos(data)
-      setLoading(false)
-
     } catch (e) {
-
+      console.error(e);
+    } finally {
+      setLoading(false)
     }
   }
 
