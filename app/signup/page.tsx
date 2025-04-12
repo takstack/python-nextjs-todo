@@ -29,7 +29,8 @@ const LoginPage = () => {
             const saveUserToDb = await fetch('http://10.10.21.90:8000/user', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '10.10.21.51'
                 },
                 body: JSON.stringify({ email, name, uuid: appwriteUser.$id }),
             })
