@@ -30,7 +30,12 @@ export default function Home() {
 
   const fetchAllPublicTodos = async () => {
     if (fetchedRef.current) return;
-
+    const settings = {
+      method: 'POST',
+      headers: {
+          'Access-Control-Allow-Origin': '10.10.21.51'
+      }
+    }
     try {
       fetchedRef.current = true;
       const res = await fetch('http://10.10.21.90:8000/all_todos')
