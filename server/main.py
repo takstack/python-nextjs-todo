@@ -19,6 +19,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",  # Next.js frontend
         "http://frontend:3000",   # Docker service name
+        "http://10.10.21.51:3000",  # access vm ip
     ],
     allow_credentials=True,
     allow_methods=["*"],
