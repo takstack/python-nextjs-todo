@@ -21,7 +21,7 @@ const AddForm = ({ setTodos, todos, user }) => {
         })
 
         try {
-            const addtodores = await fetch('http://localhost:8000/todo', {
+            const addtodores = await fetch('http://10.10.21.90:8000/todo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

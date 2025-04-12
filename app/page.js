@@ -33,7 +33,7 @@ export default function Home() {
 
     try {
       fetchedRef.current = true;
-      const res = await fetch('http://localhost:8000/all_todos')
+      const res = await fetch('http://10.10.21.90:8000/all_todos')
       const data = await res.json()
       console.log({ data })
       setTodos(data)

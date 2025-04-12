@@ -26,7 +26,7 @@ const LoginPage = () => {
             const appwriteUser = await account.create(ID.unique(), email, password, name);
             // console.log({ appwriteUser });
 
-            const saveUserToDb = await fetch('http://localhost:8000/user', {
+            const saveUserToDb = await fetch('http://10.10.21.90:8000/user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

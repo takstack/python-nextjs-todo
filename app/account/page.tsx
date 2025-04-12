@@ -26,7 +26,7 @@ const Page = () => {
         const { completed } = todos.find(t => t.id === id)
 
         try {
-            const res = await fetch(`http://localhost:8000/todo/${id}?completed=${!completed ? 1 : 0}`, {
+            const res = await fetch(`http://10.10.21.90:8000/todo/${id}?completed=${!completed ? 1 : 0}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const Page = () => {
 
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`http://localhost:8000/todo/${id}`, {
+            const res = await fetch(`http://10.10.21.90:8000/todo/${id}`, {
                 method: 'DELETE',
             })
             const data = await res.json()
@@ -68,7 +68,7 @@ const Page = () => {
 
         try {
             fetchedRef.current = true;
-            const res = await fetch(`http://localhost:8000/todos?user_id=${user_id}`)
+            const res = await fetch(`http://10.10.21.90:8000/todos?user_id=${user_id}`)
             const data = await res.json()
 
             if (data.detail) {
