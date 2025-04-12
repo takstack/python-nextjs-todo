@@ -13,15 +13,16 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
+origins=[
         "http://localhost:3000",  # Next.js frontend
         "http://frontend:3000",   # Docker service name
         "http://10.10.21.51:3000",  # access vm ip
         "http://10.10.21.51",  # access vm ip
-    ],
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
