@@ -33,6 +33,7 @@ export default function Home() {
     const settings = {
       headers: {
           'Access-Control-Allow-Origin': '10.10.21.51'
+          // 'Access-Control-Allow-Origin': '*'
       }
     }
     try {
