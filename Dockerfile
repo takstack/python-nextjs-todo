@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY postcss.config.* ./
 COPY tailwind.config.* ./
-COPY ../.env.local ../.env.local
+# COPY ../.env.local ../.env.local
 
 # Install dependencies
 RUN npm install
