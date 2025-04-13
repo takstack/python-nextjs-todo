@@ -7,8 +7,8 @@ services:
       - "3000:3000"
     env_file: './.env.local'
     args:
-      - ARG NEXT_PUBLIC_APPWRITE_URL=${ARG NEXT_PUBLIC_APPWRITE_URL}
-      - ARG NEXT_PUBLIC_APPWRITE_PROJECT_ID=${ARG NEXT_PUBLIC_APPWRITE_PROJECT_ID}
+      - NEXT_PUBLIC_APPWRITE_URL=${ARG NEXT_PUBLIC_APPWRITE_URL}
+      - NEXT_PUBLIC_APPWRITE_PROJECT_ID=${ARG NEXT_PUBLIC_APPWRITE_PROJECT_ID}
       # - required: true # default
     # environment:
     #   - NEXT_PUBLIC_API_URL=http://backend:8000
