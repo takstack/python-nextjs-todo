@@ -5,9 +5,9 @@ services:
     build: .
     ports:
       - "3000:3000"
-    env_file: 
-      - path: ./.env.local
-      - required: true # default
+    env_file: .env.local 
+      # - path: ./.env.local
+      # - required: true # default
     environment:
       - NEXT_PUBLIC_API_URL=http://backend:8000
       - NODE_ENV=development
