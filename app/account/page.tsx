@@ -29,7 +29,8 @@ const Page = () => {
             const res = await fetch(`http://10.10.21.90:8000/todo/${id}?completed=${!completed ? 1 : 0}`, {
                 method: 'PUT',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '10.10.21.51'
                 },
                 body: JSON.stringify({ completed: !completed ? 1 : 0 })
             })

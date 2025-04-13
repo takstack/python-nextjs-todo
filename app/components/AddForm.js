@@ -25,6 +25,7 @@ const AddForm = ({ setTodos, todos, user }) => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '10.10.21.51'
                 },
                 body: JSON.stringify({
                     title,  // assuming 'todo' is your input value
