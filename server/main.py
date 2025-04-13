@@ -17,6 +17,7 @@ origins=[
         "http://localhost:3000",  # Next.js frontend
         "http://frontend:3000",   # Docker service name
         "http://10.10.21.51:3000",  # access vm ip
+        "http://10.10.21.51:8000",  # access vm ip
         "http://10.10.21.51",  # access vm ip
 ]
 
@@ -166,7 +167,7 @@ async def create_user(user: UserBase, db: Session = Depends(get_db)):
      # Verify user was created
     # created_user = db.query(UserModel).filter(UserModel.uuid == user.uuid).first()
     # logger.info(f"Created user with UUID: {created_user.uuid if created_user else 'Not found'}")
-
+    print("db_user: ", db_user)
     db.refresh(db_user)
     return db_user
 
