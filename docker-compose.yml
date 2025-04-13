@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     env_file: 
-      - path: ./.env.local
+      - ./.env.local
       - required: true # default
     # environment:
     #   - NEXT_PUBLIC_API_URL=http://backend:8000
