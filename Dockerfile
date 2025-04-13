@@ -15,8 +15,8 @@ COPY tailwind.config.* ./
 COPY . .
 
 # set env vars
-ARG NEXT_PUBLIC_APPWRITE_URL
-ARG NEXT_PUBLIC_APPWRITE_PROJECT_ID
+# ARG NEXT_PUBLIC_APPWRITE_URL
+# ARG NEXT_PUBLIC_APPWRITE_PROJECT_ID
 
 # Install dependencies
 RUN npm install
