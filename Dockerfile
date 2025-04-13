@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
 WORKDIR /
-COPY ./.env.local ./.env.local
+COPY .env.local /
 
 WORKDIR /app
 
