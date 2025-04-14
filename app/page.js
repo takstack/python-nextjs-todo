@@ -31,6 +31,7 @@ export default function Home() {
   const fetchAllPublicTodos = async () => {
     if (fetchedRef.current) return;
     const settings = {
+      method: "GET",
       headers: {
           'Access-Control-Allow-Origin': '10.10.21.51'
           // 'Access-Control-Allow-Origin': '*'
